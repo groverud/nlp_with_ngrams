@@ -3,9 +3,7 @@ import utilities
 
 ## 1
 def parse_story(file_name):
-    '''
-    Don't forget to fill in your docstrings
-    '''
+
     final = []
     f =  open(file_name,"rt")
 
@@ -27,19 +25,13 @@ def parse_story(file_name):
 
 ## 2
 def get_prob_from_count(counts):
-    '''
-    Don't forget to fill in your docstrings
-    '''
 
     return [counts[i]/sum(counts) for i in range(len(counts))]
 
 
 ## 3
 def build_ngram_counts(words, n):
-    '''
-    Don't forget to fill in your docstrings
-    '''
-    
+
     word_list = []
     alt_list = []
    
@@ -96,9 +88,7 @@ def build_ngram_counts(words, n):
 
 ## 4
 def prune_ngram_counts(counts, prune_len):
-    '''
-    Don't forget to fill in your docstrings
-    '''
+
 
     pred_list = [counts[i][0] for i in counts]
     count_nums = [counts[i][1] for i in counts]
@@ -149,9 +139,6 @@ def prune_ngram_counts(counts, prune_len):
 
 ## 5
 def probify_ngram_counts(counts):
-    '''
-    Don't forget to fill in your docstrings
-    '''
 
     
     keys = [k for k in counts]
@@ -166,10 +153,7 @@ def probify_ngram_counts(counts):
     return final
 
 ## 6
-def build_ngram_model(words, n):
-    '''
-    Don't forget to fill in your docstrings
-    '''
+
     counts = probify_ngram_counts( prune_ngram_counts( build_ngram_counts(words, n), 15 ) )
   
     
@@ -217,9 +201,7 @@ def build_ngram_model(words, n):
 
 ## 7
 def gen_bot_list(ngram_model, seed, num_tokens=0):
-    '''
-    Don't forget to fill in your docstrings
-    '''
+ 
     s = tuple(list(seed)[:])
     l = len(seed)
     nl = list(seed)
@@ -254,9 +236,7 @@ def gen_bot_list(ngram_model, seed, num_tokens=0):
 
 ## 8
 def gen_bot_text(token_list, bad_author):
-    '''
-    Don't forget to fill in your docstrings
-    '''
+
     s = ''
     if(bad_author == True):
         for i in token_list:
@@ -286,9 +266,7 @@ def gen_bot_text(token_list, bad_author):
 
 ## 9
 def write_story(file_name, text, title, student_name, author, year):
-    '''
-    Don't forget to fill in your docstrings
-    '''
+
 
     f = open(file_name, "wt")
     f.write("\n\n\n\n\n\n\n\n\n\n"+ title + ": " + str(year) + ", UNLEASHED\n" + student_name + ", inspired by "+ author+ "\nCopyright year published (" + str(year) + "), publisher: EngSci press\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
